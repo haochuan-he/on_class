@@ -1,3 +1,7 @@
+// 23.10.27
+// function
+
+/*
 // 23.10.20
 // on class
 // by HHC
@@ -127,3 +131,4 @@ int main()
     // }
     return 0;
 }
+*/

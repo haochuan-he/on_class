@@ -1,3 +1,43 @@
+// 10.27
+// function
+
+#include <stdio.h>
+#include <stdbool.h>
+
+// function declare
+bool IsLeapYear(int yaer); // function:大驼峰命名法，首字母都大写
+
+int main()
+{
+    int year = 0;
+    scanf("%d", &year);
+
+    // caller
+    // callee
+    bool leap = IsLeapYear(year);
+
+    if (leap == 1)
+    {
+        printf("%d is a leap year\n", year);
+    }
+    else
+    {
+        printf("%d is a NOT leap year\n", year);
+    }
+
+    return 0;
+}
+
+// function definite
+// year:formal parameter 形式参数;block scope
+bool IsLeapYear(int year) // function:大驼峰命名法，首字母都大写
+{
+    // local variable:year,leap
+    // scope:block scope 块作用域
+    bool leap = (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
+    return leap;
+}
+/*
 // 23.10.8 16:01
 // on class
 // by HHC
@@ -112,3 +152,4 @@ int main()
 
     return 0;
 }
+*/
