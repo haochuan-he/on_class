@@ -1,5 +1,5 @@
-// 23.10.27
-// on class
+// 23.11.10
+// on class: recurision--a function that calls itself
 // by HHC
 
 #include <stdio.h>
