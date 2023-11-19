@@ -1,5 +1,5 @@
-// 23.11.10
-// on class: recurision--a function that calls itself
+// 23.11.17
+// on class: recursion && data types
 // by HHC
 
 #include <stdio.h>
