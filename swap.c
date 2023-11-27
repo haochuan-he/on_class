@@ -7,15 +7,25 @@
 // A pointer is a variable that contains the address of a variable.
 //
 // TWO SENTENCES FOR ARRAYS :
-// In expressions,the name of an array is a synonym for the address of its first element;
-// But an array name is NOT a pointer.
-//
 // by HHC
 
 #include <stdio.h>
 
+void Swap(int *a, int *b);
+
 int main()
 {
+    int a = 1, b = 10;
+    printf("a=%d b=%d\n", a, b);
+    Swap(&a, &b);
+    printf("a=%d b=%d\n", a, b);
 
     return 0;
+}
+
+void Swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }

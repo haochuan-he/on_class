@@ -1,3 +1,39 @@
+// 23.11.24
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int len = 0;
+    scanf("%d", &len);
+    // malloc: void *malloc(size_t size)
+    // size_t size: unsigned long / long long  --- So ensure the size is positive
+    //  int *numbers = malloc(len * sizeof(int)); // void *malloc,可转成任何想要的指针类型
+    int *numbers = malloc(len * sizeof(*numbers)); // sizeof(*numbers)可以使得修改*numbers类型的时候仍然正确
+
+    // NULL :null pointer ((void*)0)
+    if (numbers == NULL) // 判断返回的是不是空指针来判断 malloc是否成功分配内存,并决定程序是否继续进行
+    {
+        return 0;
+    }
+
+    for (int i = 0; i < len; i++)
+    {
+        scanf("%d", &numbers[i]);
+    }
+
+    // malloc 分配的内存在“堆空间”(heap)中,当main函数结束的时候，栈空间(stack)的main还给了操作系统，但堆空间中的内存一直被占用
+    //--"内存泄漏"，当复杂程序长时间运行的时候会不断泄露内存(但小型程序结束后操作系统会回收所有栈空间和堆空间)
+    free(numbers);
+    // void free(void *point);
+    //  不能多次free，UBs
+    //  之后不能再对numbers操作
+    //  不能free其他变量，即不应该free栈空间，只能free由malloc动态申请的堆空间
+
+    return 0;
+}
+
+/*
 // 23.10.13
 // on calss
 // by HHC
@@ -61,3 +97,4 @@ int main()
     }
     return 0;
 }
+*/
