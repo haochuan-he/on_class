@@ -1,5 +1,3 @@
-   // int count = 0;
-    // if (board[i - 1][j - 1] == 1)
-    // {
-    //     count++;
-    // }
+
+  printf("StrLen(%s) = %d\n", msg, StrLen(msg));
+  printf("StrLenStd(%s) = %zu\n", msg, StrLenStd(msg));
